@@ -1,0 +1,51 @@
+<!doctype html>
+<link rel="stylesheet" href="static/styles.css">
+
+<div>
+	<form action="/new" method="POST">
+
+
+	    First name:<br>
+	    <input type="text" name="firstName"></input><br>
+	    Last name:<br>
+	    <input type="text" name="lastName"></input><br>
+	    Age:<br>
+	    <input type="text" name="age"></input><br>
+	    
+	    <!-- Gender:<br>
+	    <input type="text" name="gender"></input><br> -->
+	    <input type="radio" name="gender" value="male" checked> Male<br>
+  		<input type="radio" name="gender" value="female"> Female<br>
+  		<input type="radio" name="gender" value="other"> Other<br>
+
+	    
+	    Email:<br>
+	    <input type="email" name="email"></input><br>
+	    Registration Date:<br>
+	    <input type="date" name="registrationDate"></input>
+	    
+	    <input type="submit"></input>
+	</form>
+
+	<table>
+	  <tr>
+	    <th>First Name</th>
+	    <th>Last Name</th>
+	    <th>Age</th>
+	    <th>Gender</th>
+	    <th>email</th>
+	    <th>Date of registration<th>
+	  </tr>
+
+	{% for item in items %}
+	  <tr>
+	    <td> {{ item.firstName }} </td>
+	    <td> {{ item.lastName }} </td>
+	    <td> {{ item.age }} </td>
+	    <td> {{ item.gender }} </td>
+	    <td> {{ item.email }} </td>
+	    <td> {{ item.registrationDate }} </td>
+	  </tr>
+	{% endfor %}
+	</table>
+<div>
